@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Base URL (Flutter replaces this automatically at build time) -->
+  <base href="/">
+
+  <!-- Encoding and responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="RedPulp - Flutter Web App">
+
+  <!-- Progressive Web App (PWA) Meta -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RedPulp">
+  <meta name="theme-color" content="#121212"> <!-- Dark theme color -->
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Preload Flutter bundle for faster startup -->
+  <link rel="preload" href="main.dart.js" as="script">
+
+  <title>RedPulp Dental</title>
+
+  <!-- Optional: Force dark background while Flutter loads -->
+  <style>
+    html, body {
+      background-color: #121212;
+      color-scheme: dark;
+      color: #ffffff;
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<!-- Handle GitHub Pages routing for Flutter web -->
+<script>
+  var redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, null, redirect);
+  }
+</script>
+
+<!-- Load Flutter -->
+<script src="flutter_bootstrap.js" defer></script>
+</body>
+</html>
